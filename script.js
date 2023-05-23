@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const equalButton = document.querySelector(`.equal`);
     const substractButton = document.querySelector('.substract');
     const multiplyButton = document.querySelector('.multiply');
+    const divideButton = document.querySelector('.divide');
   
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (operator === "-") {
         outcomeElement.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
       } else if (operator === "/") {
-        outcomeElement.textContent = parseFloat(firstNumber) - parseFloat(secondNumber);
+        outcomeElement.textContent = parseFloat(firstNumber) / parseFloat(secondNumber);
       } else if (operator === "*") {
         outcomeElement.textContent = parseFloat(firstNumber) * parseFloat(secondNumber);
       }
@@ -77,11 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
       operator ="*";
     })
 
+    divideButton.addEventListener('click', () => {
+      saveFirstNumber();
+      operator ="/";
+    })
+
     equalButton.addEventListener('click', () => {
       saveSecondNumber();
       calculate();
     }); 
-
 
   });
  
