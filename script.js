@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     function updateOutcome(text) {
-        if (outcomeElement.textContent === '0' && text !== ',') {
+        if (outcomeElement.textContent === '0' && text !== '.') {
           outcomeElement.textContent = text;
-        } else if (text === ',' && outcomeElement.textContent.includes(',')) {
+        } else if (text === '.' && outcomeElement.textContent.includes(',')) {
           return;
         } else if (outcomeElement.textContent.length < 12) {
           outcomeElement.textContent += text;
