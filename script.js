@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const multiplyButton = document.querySelector('.multiply');
     const divideButton = document.querySelector('.divide');
     const percentButton = document.querySelector('.percent');
+    const symbolButton = document.querySelector('.symbol');
   
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -92,6 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
     percentButton.addEventListener('click', () => {
       saveFirstNumber();
       outcomeElement.textContent = parseFloat(firstNumber) / 100;
+    })
+
+    symbolButton.addEventListener('click', () => {
+      saveSecondNumber();
+      if (parseFloat(secondNumber) > 0) {
+        outcomeElement.textContent = "-" + outcomeElement.textContent;
+      } else if (parseFloat(secondNumber) < 0) {
+        outcomeElement.textContent = outcomeElement.textContent.slice(1);
+      }
     })
 
   });
