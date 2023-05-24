@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateOutcome(text) {
         if (outcomeElement.textContent === '0' && text !== '.') {
           outcomeElement.textContent = text;
-        } else if (text === '.' && outcomeElement.textContent.includes(',')) {
+        } else if (text === '.' && outcomeElement.textContent.includes('.')) {
           return;
         } else if (outcomeElement.textContent.length < 12) {
           outcomeElement.textContent += text;
@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     equalButton.addEventListener('click', () => {
       saveSecondNumber();
       calculate();
+      fixLength();
     }); 
 
     percentButton.addEventListener('click', () => {
@@ -104,5 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
 
+    function fixLength() {
+      if (outcomeElement.textContent.length > 12 && outcomeElement.textContent.includes('.')) {
+        outcomeElement.textContent = outcomeElement.textContent.slice(0, 12);
+      } else if (outcomeElement.textContent.length > 12 && !outcomeElement.textContent.includes('.')) {
+        outcomeElement.textContent = "Overflow!";
+      }
+    }
   });
  
