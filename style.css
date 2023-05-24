@@ -98,3 +98,13 @@ button:active.tool {
     background-color: #bdbdbdb9;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000b9;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
